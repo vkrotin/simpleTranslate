@@ -1,0 +1,39 @@
+//
+//  simpleTranslate-Prefix.pch
+//  simpleTranslate
+//
+//  Created by Aleksey Anisimov on 26.02.17.
+//  Copyright © 2017 Aleksey Anisimov. All rights reserved.
+//
+
+#ifndef simpleTranslate_Prefix_pch
+#define simpleTranslate_Prefix_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//#define MR_SHORTHAND
+//#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+#import <MagicalRecord/MagicalRecord.h>
+#define lang_dict [NSLocale componentsFromLocaleIdentifier:[NSLocale preferredLanguages][0]]
+#define current_language lang_dict[@"kCFLocaleLanguageCodeKey"]
+
+
+#define yandex_dict_key @"dict.1.1.20150223T182028Z.44c4ff2b1c7e23bd.ae779d9902ca707e1bc272cf99eaa4cb51295c01"
+#define yandex_sound_key @"63abe285-f288-45c6-bf15-73007e00cf4c"
+#define yandex_key @"trnsl.1.1.20150222T163032Z.8d580206cee16d6a.a311de8a6dd03085ba816701636b7ffdb45e5373"
+
+#define dict_request(tLang, tText) [NSString stringWithFormat:@"https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=%@&lang=%@&text=%@", yandex_dict_key, tLang, tText]
+#define translate_request(tLang, tText) [NSString stringWithFormat:@"https://translate.yandex.net/api/v1.5/tr.json/translate?key=%@&text=%@&lang=%@", yandex_key, tText, tLang]
+#define current_lang(tText) [NSString stringWithFormat:@"https://translate.yandex.net/api/v1.5/tr.json/detect?key=%@&text=%@", yandex_key, tText]
+#define current_lang_list [NSString stringWithFormat:@"https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=%@&ui=%@", yandex_key, current_language]
+
+#define yandex_sound_request(tLang, tSpeaker, tText) [NSString stringWithFormat:@"http://tts.voicetech.yandex.net/generate?text=%@&format=wav&lang=%@&speaker=%@&emotion=good&key=%@", tText, tLang, tSpeaker, yandex_sound_key]
+
+#define UIColorRGB(rgb) ([[UIColor alloc] initWithRed:(((rgb >> 16) & 0xff) / 255.0f) green:(((rgb >> 8) & 0xff) / 255.0f) blue:(((rgb) & 0xff) / 255.0f) alpha:1.0f])
+
+#define ShowNetworkActivityIndicator [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+#define HideNetworkActivityIndicator [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
+#define _mainStoryboard [UIStoryboard storyboardWithName:@"Main" bundle: nil]
+
+
+#endif

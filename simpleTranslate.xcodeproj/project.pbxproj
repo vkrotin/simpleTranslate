@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8232123B1E631CF90055A7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8232123A1E631CF90055A7D8 /* main.m */; };
+		8232123E1E631CF90055A7D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8232123D1E631CF90055A7D8 /* AppDelegate.m */; };
+		823212441E631CF90055A7D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823212421E631CF90055A7D8 /* Main.storyboard */; };
+		823212471E631CF90055A7D8 /* simpleTranslate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 823212451E631CF90055A7D8 /* simpleTranslate.xcdatamodeld */; };
+		823212491E631CF90055A7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823212481E631CF90055A7D8 /* Assets.xcassets */; };
+		8232124C1E631CF90055A7D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8232124A1E631CF90055A7D8 /* LaunchScreen.storyboard */; };
+		823212581E631F360055A7D8 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212551E631F360055A7D8 /* DictionaryViewController.m */; };
+		823212591E631F360055A7D8 /* TranslateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212571E631F360055A7D8 /* TranslateViewController.m */; };
+		8232125D1E631F910055A7D8 /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8232125C1E631F910055A7D8 /* CALayer+Additions.m */; };
+		8232126A1E631FE50055A7D8 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212671E631FE50055A7D8 /* CoreDataManager.m */; };
+		8232126B1E631FE50055A7D8 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212691E631FE50055A7D8 /* RequestManager.m */; };
+		8232126E1E632F0D0055A7D8 /* LangTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8232126D1E632F0D0055A7D8 /* LangTableViewController.m */; };
+		823212711E634EC60055A7D8 /* NSMutableAttributedString+Translate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212701E634EC60055A7D8 /* NSMutableAttributedString+Translate.m */; };
+		EE321F36F912C5D7CD8CC1D8 /* libPods-simpleTranslate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF955A5BA7103A86758E7548 /* libPods-simpleTranslate.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		823212361E631CF90055A7D8 /* simpleTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8232123A1E631CF90055A7D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8232123C1E631CF90055A7D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8232123D1E631CF90055A7D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		823212431E631CF90055A7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		823212461E631CF90055A7D8 /* simpleTranslate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = simpleTranslate.xcdatamodel; sourceTree = "<group>"; };
+		823212481E631CF90055A7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8232124B1E631CF90055A7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8232124D1E631CF90055A7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		823212531E631EDA0055A7D8 /* simpleTranslate-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "simpleTranslate-Prefix.pch"; sourceTree = "<group>"; };
+		823212541E631F360055A7D8 /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
+		823212551E631F360055A7D8 /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
+		823212561E631F360055A7D8 /* TranslateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslateViewController.h; sourceTree = "<group>"; };
+		823212571E631F360055A7D8 /* TranslateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslateViewController.m; sourceTree = "<group>"; };
+		8232125B1E631F910055A7D8 /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
+		8232125C1E631F910055A7D8 /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
+		823212661E631FE50055A7D8 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		823212671E631FE50055A7D8 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		823212681E631FE50055A7D8 /* RequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestManager.h; sourceTree = "<group>"; };
+		823212691E631FE50055A7D8 /* RequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestManager.m; sourceTree = "<group>"; };
+		8232126C1E632F0D0055A7D8 /* LangTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LangTableViewController.h; sourceTree = "<group>"; };
+		8232126D1E632F0D0055A7D8 /* LangTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangTableViewController.m; sourceTree = "<group>"; };
+		8232126F1E634EC60055A7D8 /* NSMutableAttributedString+Translate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Translate.h"; sourceTree = "<group>"; };
+		823212701E634EC60055A7D8 /* NSMutableAttributedString+Translate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Translate.m"; sourceTree = "<group>"; };
+		8FE08D640AEFC2B4A34AE214 /* Pods-simpleTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTranslate.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTranslate/Pods-simpleTranslate.release.xcconfig"; sourceTree = "<group>"; };
+		BF955A5BA7103A86758E7548 /* libPods-simpleTranslate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-simpleTranslate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5C3442225876ACAD96185FF /* Pods-simpleTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTranslate/Pods-simpleTranslate.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		823212331E631CF90055A7D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE321F36F912C5D7CD8CC1D8 /* libPods-simpleTranslate.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36DAADD20FB3B86DCE1FD850 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5C3442225876ACAD96185FF /* Pods-simpleTranslate.debug.xcconfig */,
+				8FE08D640AEFC2B4A34AE214 /* Pods-simpleTranslate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4DF3CFDD3B5C0AD2592FB479 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF955A5BA7103A86758E7548 /* libPods-simpleTranslate.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8232122D1E631CF90055A7D8 = {
+			isa = PBXGroup;
+			children = (
+				823212381E631CF90055A7D8 /* simpleTranslate */,
+				823212371E631CF90055A7D8 /* Products */,
+				36DAADD20FB3B86DCE1FD850 /* Pods */,
+				4DF3CFDD3B5C0AD2592FB479 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		823212371E631CF90055A7D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				823212361E631CF90055A7D8 /* simpleTranslate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		823212381E631CF90055A7D8 /* simpleTranslate */ = {
+			isa = PBXGroup;
+			children = (
+				823212651E631FE50055A7D8 /* API */,
+				8232125A1E631F910055A7D8 /* Category */,
+				8232123C1E631CF90055A7D8 /* AppDelegate.h */,
+				8232123D1E631CF90055A7D8 /* AppDelegate.m */,
+				823212541E631F360055A7D8 /* DictionaryViewController.h */,
+				823212551E631F360055A7D8 /* DictionaryViewController.m */,
+				823212561E631F360055A7D8 /* TranslateViewController.h */,
+				823212571E631F360055A7D8 /* TranslateViewController.m */,
+				8232126C1E632F0D0055A7D8 /* LangTableViewController.h */,
+				8232126D1E632F0D0055A7D8 /* LangTableViewController.m */,
+				823212421E631CF90055A7D8 /* Main.storyboard */,
+				823212481E631CF90055A7D8 /* Assets.xcassets */,
+				8232124A1E631CF90055A7D8 /* LaunchScreen.storyboard */,
+				8232124D1E631CF90055A7D8 /* Info.plist */,
+				823212451E631CF90055A7D8 /* simpleTranslate.xcdatamodeld */,
+				823212391E631CF90055A7D8 /* Supporting Files */,
+			);
+			path = simpleTranslate;
+			sourceTree = "<group>";
+		};
+		823212391E631CF90055A7D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				823212531E631EDA0055A7D8 /* simpleTranslate-Prefix.pch */,
+				8232123A1E631CF90055A7D8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8232125A1E631F910055A7D8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				8232125B1E631F910055A7D8 /* CALayer+Additions.h */,
+				8232125C1E631F910055A7D8 /* CALayer+Additions.m */,
+				8232126F1E634EC60055A7D8 /* NSMutableAttributedString+Translate.h */,
+				823212701E634EC60055A7D8 /* NSMutableAttributedString+Translate.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		823212651E631FE50055A7D8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				823212661E631FE50055A7D8 /* CoreDataManager.h */,
+				823212671E631FE50055A7D8 /* CoreDataManager.m */,
+				823212681E631FE50055A7D8 /* RequestManager.h */,
+				823212691E631FE50055A7D8 /* RequestManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		823212351E631CF90055A7D8 /* simpleTranslate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 823212501E631CF90055A7D8 /* Build configuration list for PBXNativeTarget "simpleTranslate" */;
+			buildPhases = (
+				B9A87491C6BFA079B8A8D182 /* 📦 Check Pods Manifest.lock */,
+				823212321E631CF90055A7D8 /* Sources */,
+				823212331E631CF90055A7D8 /* Frameworks */,
+				823212341E631CF90055A7D8 /* Resources */,
+				96BD62F7CC8C274E728D641F /* 📦 Embed Pods Frameworks */,
+				8EEB56F3952D3B3F61E4DCF7 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = simpleTranslate;
+			productName = simpleTranslate;
+			productReference = 823212361E631CF90055A7D8 /* simpleTranslate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8232122E1E631CF90055A7D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Aleksey Anisimov";
+				TargetAttributes = {
+					823212351E631CF90055A7D8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Z44RY25MUV;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 823212311E631CF90055A7D8 /* Build configuration list for PBXProject "simpleTranslate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8232122D1E631CF90055A7D8;
+			productRefGroup = 823212371E631CF90055A7D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				823212351E631CF90055A7D8 /* simpleTranslate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		823212341E631CF90055A7D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8232124C1E631CF90055A7D8 /* LaunchScreen.storyboard in Resources */,
+				823212491E631CF90055A7D8 /* Assets.xcassets in Resources */,
+				823212441E631CF90055A7D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8EEB56F3952D3B3F61E4DCF7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-simpleTranslate/Pods-simpleTranslate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96BD62F7CC8C274E728D641F /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-simpleTranslate/Pods-simpleTranslate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9A87491C6BFA079B8A8D182 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		823212321E631CF90055A7D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823212591E631F360055A7D8 /* TranslateViewController.m in Sources */,
+				823212711E634EC60055A7D8 /* NSMutableAttributedString+Translate.m in Sources */,
+				8232126A1E631FE50055A7D8 /* CoreDataManager.m in Sources */,
+				823212471E631CF90055A7D8 /* simpleTranslate.xcdatamodeld in Sources */,
+				8232123E1E631CF90055A7D8 /* AppDelegate.m in Sources */,
+				8232126E1E632F0D0055A7D8 /* LangTableViewController.m in Sources */,
+				823212581E631F360055A7D8 /* DictionaryViewController.m in Sources */,
+				8232123B1E631CF90055A7D8 /* main.m in Sources */,
+				8232125D1E631F910055A7D8 /* CALayer+Additions.m in Sources */,
+				8232126B1E631FE50055A7D8 /* RequestManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		823212421E631CF90055A7D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823212431E631CF90055A7D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8232124A1E631CF90055A7D8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8232124B1E631CF90055A7D8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8232124E1E631CF90055A7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8232124F1E631CF90055A7D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		823212511E631CF90055A7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5C3442225876ACAD96185FF /* Pods-simpleTranslate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z44RY25MUV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "simpleTranslate/simpleTranslate-Prefix.pch";
+				INFOPLIST_FILE = simpleTranslate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.vkrotin.simpleTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "85dbdb6b-f984-4efc-9da6-74958073c2ee";
+				PROVISIONING_PROFILE_SPECIFIER = "Develop: Wildcard App *";
+			};
+			name = Debug;
+		};
+		823212521E631CF90055A7D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE08D640AEFC2B4A34AE214 /* Pods-simpleTranslate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z44RY25MUV;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "simpleTranslate/simpleTranslate-Prefix.pch";
+				INFOPLIST_FILE = simpleTranslate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.vkrotin.simpleTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "85dbdb6b-f984-4efc-9da6-74958073c2ee";
+				PROVISIONING_PROFILE_SPECIFIER = "Develop: Wildcard App *";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		823212311E631CF90055A7D8 /* Build configuration list for PBXProject "simpleTranslate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8232124E1E631CF90055A7D8 /* Debug */,
+				8232124F1E631CF90055A7D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		823212501E631CF90055A7D8 /* Build configuration list for PBXNativeTarget "simpleTranslate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823212511E631CF90055A7D8 /* Debug */,
+				823212521E631CF90055A7D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		823212451E631CF90055A7D8 /* simpleTranslate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				823212461E631CF90055A7D8 /* simpleTranslate.xcdatamodel */,
+			);
+			currentVersion = 823212461E631CF90055A7D8 /* simpleTranslate.xcdatamodel */;
+			path = simpleTranslate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8232122E1E631CF90055A7D8 /* Project object */;
+}

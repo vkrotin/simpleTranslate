@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1217" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="STLang" representedClassName="STLang" syncable="YES" codeGenerationType="class">
+        <attribute name="langKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="langName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="STTranslate" representedClassName="STTranslate" syncable="YES" codeGenerationType="class">
+        <attribute name="dateAdd" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dictionaryL" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="fromLangKey" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="request" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="responce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toLangKey" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="STTranslate" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="STLang" positionX="-54" positionY="-9" width="128" height="75"/>
+    </elements>
+</model>
