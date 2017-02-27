@@ -13,6 +13,7 @@
 
 @interface TranslateViewController (){
     NSString *_buffText;
+    NSArray *_buffTrArray;
 }
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 @property (weak, nonatomic) IBOutlet UITextView *translateTextView;
@@ -23,8 +24,18 @@
 
 @implementation TranslateViewController
 
+-(void) dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _buffText = [NSString new];
+    _buffTrArray = [NSArray new];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willHideKeyboard) name:UIKeyboardWillHideNotification object:nil];
+    
     [self.inputTextView scrollRangeToVisible:NSMakeRange(0, 1)];
 }
 
@@ -36,11 +47,12 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    
     [[RequestManager sharedManager] currentSelectedLanguage:^(STLang *fromLang, STLang *toLang){
         [self.navigationItem.leftBarButtonItem setTitle:fromLang.langName];
         [self.navigationItem.rightBarButtonItem setTitle:toLang.langName];
         
-        [self setRequestWithText:_inputTextView.text];
+        [self setRequestWithText:_inputTextView.text saveIt:YES];
    
     }];
     
@@ -53,6 +65,8 @@
             [_inputTextView becomeFirstResponder];
     });
 }
+
+
 - (IBAction)tapGesture:(id)sender {
     [self.view endEditing:YES];
 }
@@ -64,35 +78,37 @@
         
         if (_buffText){
             _inputTextView.text = _buffText;
-            [self setRequestWithText:_buffText];
+            [self setRequestWithText:_buffText saveIt:YES];
         }
-        
-        
     }];
     
 }
 
--(void) updateRequest{
-    
-}
 
-
-- (void)setRequestWithText:(NSString *)inputText {
+- (void)setRequestWithText:(NSString *)inputText saveIt:(BOOL) saveIt {
     
     if (inputText.length == 0)
         return;
     
     [[RequestManager sharedManager]translateText:inputText
                                       completion:^(NSString *translateText, NSArray *trArray, NSError *error){
-                                          _translateTextView.attributedText = [[NSMutableAttributedString alloc] initWithText:translateText andTranslateArray:trArray];
                                           _buffText = translateText;
+                                          _buffTrArray = trArray;
+                                          _translateTextView.attributedText = [[NSMutableAttributedString alloc] initWithText:translateText andTranslateArray:trArray];
+                                          
+                                          if (saveIt)
+                                              [self willHideKeyboard];
                                       }];
+}
+
+-(void)willHideKeyboard{
+    [[RequestManager sharedManager] saveTranslateToDictionary:@{@"inputText" : _inputTextView.text, @"outputText" : _buffText, @"arrayDict" : _buffTrArray}];
 }
 
 #pragma mark UITextViewDelegate
 
 - (void)textViewDidChange:(UITextView *)textView{
-    [self setRequestWithText:textView.text];
+    [self setRequestWithText:textView.text saveIt:NO];
 }
 
 

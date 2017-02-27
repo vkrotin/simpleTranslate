@@ -13,13 +13,14 @@
 		823212471E631CF90055A7D8 /* simpleTranslate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 823212451E631CF90055A7D8 /* simpleTranslate.xcdatamodeld */; };
 		823212491E631CF90055A7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823212481E631CF90055A7D8 /* Assets.xcassets */; };
 		8232124C1E631CF90055A7D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8232124A1E631CF90055A7D8 /* LaunchScreen.storyboard */; };
-		823212581E631F360055A7D8 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212551E631F360055A7D8 /* DictionaryViewController.m */; };
 		823212591E631F360055A7D8 /* TranslateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212571E631F360055A7D8 /* TranslateViewController.m */; };
 		8232125D1E631F910055A7D8 /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8232125C1E631F910055A7D8 /* CALayer+Additions.m */; };
 		8232126A1E631FE50055A7D8 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212671E631FE50055A7D8 /* CoreDataManager.m */; };
 		8232126B1E631FE50055A7D8 /* RequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212691E631FE50055A7D8 /* RequestManager.m */; };
 		8232126E1E632F0D0055A7D8 /* LangTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8232126D1E632F0D0055A7D8 /* LangTableViewController.m */; };
 		823212711E634EC60055A7D8 /* NSMutableAttributedString+Translate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823212701E634EC60055A7D8 /* NSMutableAttributedString+Translate.m */; };
+		8251E8011E63E61900D83629 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8251E8001E63E61900D83629 /* DictionaryTableViewCell.m */; };
+		8251E8041E63E82B00D83629 /* DictionaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8251E8031E63E82B00D83629 /* DictionaryTableViewController.m */; };
 		EE321F36F912C5D7CD8CC1D8 /* libPods-simpleTranslate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF955A5BA7103A86758E7548 /* libPods-simpleTranslate.a */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +35,6 @@
 		8232124B1E631CF90055A7D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8232124D1E631CF90055A7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823212531E631EDA0055A7D8 /* simpleTranslate-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "simpleTranslate-Prefix.pch"; sourceTree = "<group>"; };
-		823212541E631F360055A7D8 /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
-		823212551E631F360055A7D8 /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
 		823212561E631F360055A7D8 /* TranslateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslateViewController.h; sourceTree = "<group>"; };
 		823212571E631F360055A7D8 /* TranslateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslateViewController.m; sourceTree = "<group>"; };
 		8232125B1E631F910055A7D8 /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
@@ -48,6 +47,10 @@
 		8232126D1E632F0D0055A7D8 /* LangTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LangTableViewController.m; sourceTree = "<group>"; };
 		8232126F1E634EC60055A7D8 /* NSMutableAttributedString+Translate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Translate.h"; sourceTree = "<group>"; };
 		823212701E634EC60055A7D8 /* NSMutableAttributedString+Translate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Translate.m"; sourceTree = "<group>"; };
+		8251E7FF1E63E61900D83629 /* DictionaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTableViewCell.h; sourceTree = "<group>"; };
+		8251E8001E63E61900D83629 /* DictionaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewCell.m; sourceTree = "<group>"; };
+		8251E8021E63E82B00D83629 /* DictionaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTableViewController.h; sourceTree = "<group>"; };
+		8251E8031E63E82B00D83629 /* DictionaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewController.m; sourceTree = "<group>"; };
 		8FE08D640AEFC2B4A34AE214 /* Pods-simpleTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTranslate.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTranslate/Pods-simpleTranslate.release.xcconfig"; sourceTree = "<group>"; };
 		BF955A5BA7103A86758E7548 /* libPods-simpleTranslate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-simpleTranslate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C3442225876ACAD96185FF /* Pods-simpleTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTranslate/Pods-simpleTranslate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,10 +110,10 @@
 				8232125A1E631F910055A7D8 /* Category */,
 				8232123C1E631CF90055A7D8 /* AppDelegate.h */,
 				8232123D1E631CF90055A7D8 /* AppDelegate.m */,
-				823212541E631F360055A7D8 /* DictionaryViewController.h */,
-				823212551E631F360055A7D8 /* DictionaryViewController.m */,
 				823212561E631F360055A7D8 /* TranslateViewController.h */,
 				823212571E631F360055A7D8 /* TranslateViewController.m */,
+				8251E8021E63E82B00D83629 /* DictionaryTableViewController.h */,
+				8251E8031E63E82B00D83629 /* DictionaryTableViewController.m */,
 				8232126C1E632F0D0055A7D8 /* LangTableViewController.h */,
 				8232126D1E632F0D0055A7D8 /* LangTableViewController.m */,
 				823212421E631CF90055A7D8 /* Main.storyboard */,
@@ -119,6 +122,8 @@
 				8232124D1E631CF90055A7D8 /* Info.plist */,
 				823212451E631CF90055A7D8 /* simpleTranslate.xcdatamodeld */,
 				823212391E631CF90055A7D8 /* Supporting Files */,
+				8251E7FF1E63E61900D83629 /* DictionaryTableViewCell.h */,
+				8251E8001E63E61900D83629 /* DictionaryTableViewCell.m */,
 			);
 			path = simpleTranslate;
 			sourceTree = "<group>";
@@ -283,8 +288,9 @@
 				823212471E631CF90055A7D8 /* simpleTranslate.xcdatamodeld in Sources */,
 				8232123E1E631CF90055A7D8 /* AppDelegate.m in Sources */,
 				8232126E1E632F0D0055A7D8 /* LangTableViewController.m in Sources */,
-				823212581E631F360055A7D8 /* DictionaryViewController.m in Sources */,
+				8251E8011E63E61900D83629 /* DictionaryTableViewCell.m in Sources */,
 				8232123B1E631CF90055A7D8 /* main.m in Sources */,
+				8251E8041E63E82B00D83629 /* DictionaryTableViewController.m in Sources */,
 				8232125D1E631F910055A7D8 /* CALayer+Additions.m in Sources */,
 				8232126B1E631FE50055A7D8 /* RequestManager.m in Sources */,
 			);
