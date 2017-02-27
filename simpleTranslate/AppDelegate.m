@@ -19,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[YSKSpeechKit sharedInstance] configureWithAPIKey:yandex_sound_key];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"simpleTranslate"];
     [[RequestManager sharedManager] loadLanguageForCurrentLocale];
     

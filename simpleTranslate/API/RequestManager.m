@@ -79,6 +79,8 @@ NSError * (^parseError)(NSInteger errorCode) = ^NSError *(NSInteger _errorCode){
                     completion:^(NSObject *obj, NSError *err){
             completionError = err;
             completionText = (NSString *) obj;
+            if (!completionText)
+                completionText = @"";
         }];
     });
     
@@ -89,6 +91,9 @@ NSError * (^parseError)(NSInteger errorCode) = ^NSError *(NSInteger _errorCode){
                     completion:^(NSObject *obj, NSError *err){
             completionError = err;
             completionTrArray = (NSArray *) obj;
+                        
+            if (!completionTrArray)
+                completionTrArray = [NSArray new];
         }];
     });
     

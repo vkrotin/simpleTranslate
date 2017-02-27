@@ -11,13 +11,15 @@
 #import "RequestManager.h"
 #import "NSMutableAttributedString+Translate.h"
 
-@interface TranslateViewController (){
+@interface TranslateViewController ()<YSKVocalizerDelegate>{
     NSString *_buffText;
     NSArray *_buffTrArray;
     BOOL _fromDictionaryTab;
+    YSKVocalizer *_vocalizer;
 }
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 @property (weak, nonatomic) IBOutlet UITextView *translateTextView;
+@property (weak, nonatomic) IBOutlet UIButton *voiceButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonTo;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonFrom;
 
@@ -63,6 +65,14 @@
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     _fromDictionaryTab = NO;
+}
+
+-(IBAction)playButtonTouch:(UIButton *)sender{
+    sender.enabled = NO;
+    _vocalizer = [[YSKVocalizer alloc] initWithText:_inputTextView.text language:YSKVocalizerLanguageRussian autoPlay:YES voice:YSKVocalizerVoiceZahar];
+    _vocalizer.delegate = self;
+    [_vocalizer start];
+   
 }
 
 
@@ -128,7 +138,28 @@
     }];
 }
 
-#pragma mark UITextViewDelegate
+#pragma mark - YSKVocalizerDelegate
+
+
+- (void)vocalizerDidFinishPlaying:(YSKVocalizer *)vocalizer{
+    _voiceButton.enabled = YES;
+    _vocalizer = nil;
+}
+
+- (void)vocalizer:(YSKVocalizer *)vocalizer didFailWithError:(NSError*)error{
+    // Show error alert if something goes wrong.
+    UIAlertController *failAlert = [UIAlertController alertControllerWithTitle:nil message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [failAlert addAction:defaultAction];
+    [self presentViewController:failAlert animated:YES completion:nil];
+    
+    _voiceButton.enabled = YES;
+}
+
+
+#pragma mark - UITextViewDelegate
 
 - (void)textViewDidChange:(UITextView *)textView{
     [self setRequestWithText:textView.text saveIt:NO];

@@ -14,6 +14,9 @@
 //#define MR_SHORTHAND
 //#define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
 #import <MagicalRecord/MagicalRecord.h>
+
+#import <YandexSpeechKit/SpeechKit.h>
+
 #define lang_dict [NSLocale componentsFromLocaleIdentifier:[NSLocale preferredLanguages][0]]
 #define current_language lang_dict[@"kCFLocaleLanguageCodeKey"]
 

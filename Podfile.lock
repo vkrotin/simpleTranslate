@@ -2,13 +2,16 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
+  - YandexSpeechKit (2.5.0)
 
 DEPENDENCIES:
   - MagicalRecord
+  - YandexSpeechKit (= 2.5.0)
 
 SPEC CHECKSUMS:
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  YandexSpeechKit: 4c0ee53139175bebef965dfa858044dc7c14b0b9
 
-PODFILE CHECKSUM: f8530a569455fed51c0222ad496b23793666e85a
+PODFILE CHECKSUM: 7f1598e830e5dba17d4fe38ef9aff014c8683ab6
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.0
