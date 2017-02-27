@@ -43,6 +43,9 @@
     return _translatesArray.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 52;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DictionaryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dictionaryViewCell" forIndexPath:indexPath];
@@ -50,10 +53,38 @@
     return cell;
 }
 
+
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    
+    if ([self.parentViewController.parentViewController isKindOfClass:[UITabBarController class]]){
+        UITabBarController *tabController = (UITabBarController *)self.parentViewController.parentViewController;
+        [tabController setSelectedIndex:0];
+    }
+    
+    
+    
     // do something
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        
+        STTranslate *tr = _translatesArray[indexPath.row];
+        
+        [_translatesArray removeObject:tr];
+        [tr MR_deleteEntity];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView reloadData];
+    }
 }
 
 /*
