@@ -27,7 +27,7 @@
     _translateObject = translateObject;
     
     self.dictTextLabel.text = _translateObject.request;
-    self.dictTextLabel.text = _translateObject.responce;
+    self.dictTranslateLabel.text = _translateObject.responce;
     self.fromToLabel.text = [NSString stringWithFormat:@"%@-%@", _translateObject.fromLangKey, _translateObject.toLangKey];
 }
 
