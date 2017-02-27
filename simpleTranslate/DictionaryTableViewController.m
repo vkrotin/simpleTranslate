@@ -60,12 +60,12 @@
     
     if ([self.parentViewController.parentViewController isKindOfClass:[UITabBarController class]]){
         UITabBarController *tabController = (UITabBarController *)self.parentViewController.parentViewController;
+        STTranslate *tr = _translatesArray[indexPath.row];
+        [[RequestManager sharedManager] setFromLangKey:tr.fromLangKey];
+        [[RequestManager sharedManager] setToLangKey:tr.toLangKey];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"notificationSelectTranslate" object:tr];
         [tabController setSelectedIndex:0];
     }
-    
-    
-    
-    // do something
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

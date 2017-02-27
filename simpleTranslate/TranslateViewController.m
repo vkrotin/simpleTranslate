@@ -14,6 +14,7 @@
 @interface TranslateViewController (){
     NSString *_buffText;
     NSArray *_buffTrArray;
+    BOOL _fromDictionaryTab;
 }
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 @property (weak, nonatomic) IBOutlet UITextView *translateTextView;
@@ -26,6 +27,7 @@
 
 -(void) dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"notificationSelectTranslate" object:nil];
 }
 
 - (void)viewDidLoad {
@@ -35,6 +37,7 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willHideKeyboard) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectTranslate:) name:@"notificationSelectTranslate" object:nil];
     
     [self.inputTextView scrollRangeToVisible:NSMakeRange(0, 1)];
 }
@@ -46,11 +49,14 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     
     [[RequestManager sharedManager] currentSelectedLanguage:^(STLang *fromLang, STLang *toLang){
         [self.navigationItem.leftBarButtonItem setTitle:fromLang.langName];
         [self.navigationItem.rightBarButtonItem setTitle:toLang.langName];
+        
+        if (_fromDictionaryTab)
+            return;
         
         [self setRequestWithText:_inputTextView.text saveIt:YES];
    
@@ -64,6 +70,11 @@
         if (_inputTextView.text.length == 0)
             [_inputTextView becomeFirstResponder];
     });
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    _fromDictionaryTab = NO;
 }
 
 
@@ -103,6 +114,17 @@
 
 -(void)willHideKeyboard{
     [[RequestManager sharedManager] saveTranslateToDictionary:@{@"inputText" : _inputTextView.text, @"outputText" : _buffText, @"arrayDict" : _buffTrArray}];
+}
+
+-(void) selectTranslate:(NSNotification *) notification{
+    STTranslate *selectTr = notification.object;
+    _buffText = selectTr.responce;
+    _buffTrArray = [NSKeyedUnarchiver unarchiveObjectWithData:selectTr.dictionaryL];
+    
+    self.inputTextView.text = selectTr.request;
+     _translateTextView.attributedText = [[NSMutableAttributedString alloc] initWithText:_buffText
+                                                                       andTranslateArray:_buffTrArray];
+    _fromDictionaryTab = YES;
 }
 
 #pragma mark UITextViewDelegate
