@@ -56,7 +56,7 @@
         
         NSDictionary *langs = langDictionary[@"langs"];
         for(NSString *keyLang in langs.allKeys){
-            [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *currentContext){
+            [MagicalRecord saveWithBlock:^(NSManagedObjectContext *currentContext){
                 STLang *lang = [STLang MR_findFirstWithPredicate:[NSPredicate predicateWithFormat:@"langKey contains[c] %@ AND langName contains[c] %@", keyLang, langs[keyLang]] inContext:currentContext];
                 
                 if (!lang){
@@ -66,6 +66,9 @@
                 lang.langKey = keyLang;
                 lang.langName = langs[keyLang];
                 
+            } completion:^(BOOL contentSave, NSError *error){
+                if (contentSave)
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateUI" object:nil];
             }];
         }
         

@@ -26,8 +26,7 @@
 @implementation TranslateViewController
 
 -(void) dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"notificationSelectTranslate" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -38,6 +37,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willHideKeyboard) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectTranslate:) name:@"notificationSelectTranslate" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI) name:@"updateUI" object:nil];
     
     [self.inputTextView scrollRangeToVisible:NSMakeRange(0, 1)];
 }
@@ -50,20 +50,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    
-    [[RequestManager sharedManager] currentSelectedLanguage:^(STLang *fromLang, STLang *toLang){
-        [self.navigationItem.leftBarButtonItem setTitle:fromLang.langName];
-        [self.navigationItem.rightBarButtonItem setTitle:toLang.langName];
-        
-        if (_fromDictionaryTab)
-            return;
-        
-        [self setRequestWithText:_inputTextView.text saveIt:YES];
-   
-    }];
-    
-
-    
+    [self updateUI];
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.1 * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -71,6 +58,7 @@
             [_inputTextView becomeFirstResponder];
     });
 }
+
 
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -125,6 +113,19 @@
      _translateTextView.attributedText = [[NSMutableAttributedString alloc] initWithText:_buffText
                                                                        andTranslateArray:_buffTrArray];
     _fromDictionaryTab = YES;
+}
+
+-(void) updateUI{
+    [[RequestManager sharedManager] currentSelectedLanguage:^(STLang *fromLang, STLang *toLang){
+        [self.navigationItem.leftBarButtonItem setTitle:fromLang.langName];
+        [self.navigationItem.rightBarButtonItem setTitle:toLang.langName];
+        
+        if (_fromDictionaryTab)
+            return;
+        
+        [self setRequestWithText:_inputTextView.text saveIt:YES];
+        
+    }];
 }
 
 #pragma mark UITextViewDelegate
