@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[YSKSpeechKit sharedInstance] configureWithAPIKey:yandex_sound_key];
+    [[YSKSpeechKit sharedInstance] setParameter:YSKDisableAntimat withValue:@"true"];
+    
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"simpleTranslate"];
     [[RequestManager sharedManager] loadLanguageForCurrentLocale];
     

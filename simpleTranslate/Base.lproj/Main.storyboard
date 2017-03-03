@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgN-p7-Wg3" id="IWz-1Z-ntp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новый" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dM-m9-U0k">
@@ -106,7 +106,7 @@
             <objects>
                 <navigationController id="NHb-Ov-Dj4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Перевод" image="first" id="ZWZ-gD-h1X"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="KGa-4U-Ry6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KGa-4U-Ry6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,13 +150,13 @@
                                     <outletCollection property="gestureRecognizers" destination="8kz-FM-N9B" appends="YES" id="Laq-RK-wtw"/>
                                 </connections>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-Mb-61K">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="LFy-Mb-61K">
                                 <rect key="frame" x="16" y="72" width="343" height="124"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="124" id="Ic6-5F-Jso"/>
                                 </constraints>
-                                <attributedString key="attributedText"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
@@ -188,6 +188,16 @@
                                     <action selector="playButtonTouch:" destination="xi0-5e-axJ" eventType="touchUpInside" id="EPN-8x-eV4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sX-wL-2Jg">
+                                <rect key="frame" x="334" y="133" width="20" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Yug-SJ-McV"/>
+                                </constraints>
+                                <state key="normal" image="micIcon"/>
+                                <connections>
+                                    <action selector="recognizeTextButtonTouch:" destination="xi0-5e-axJ" eventType="touchUpInside" id="OTl-ca-DNr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -195,11 +205,14 @@
                             <constraint firstItem="peX-bz-1o2" firstAttribute="top" secondItem="LFy-Mb-61K" secondAttribute="bottom" constant="8" id="5Gy-dm-fl3"/>
                             <constraint firstItem="8i7-R3-gvi" firstAttribute="trailing" secondItem="LFy-Mb-61K" secondAttribute="trailing" constant="-5" id="5lp-3B-m6R"/>
                             <constraint firstAttribute="trailing" secondItem="peX-bz-1o2" secondAttribute="trailing" id="6Bc-1b-TPc"/>
+                            <constraint firstItem="8i7-R3-gvi" firstAttribute="leading" secondItem="1sX-wL-2Jg" secondAttribute="leading" id="AEe-9R-vMd"/>
                             <constraint firstAttribute="trailing" secondItem="LFy-Mb-61K" secondAttribute="trailing" constant="16" id="PHU-mI-iUy"/>
                             <constraint firstItem="peX-bz-1o2" firstAttribute="leading" secondItem="tb8-7Y-jz0" secondAttribute="leading" id="VPP-20-FOX"/>
                             <constraint firstItem="JnE-27-QXC" firstAttribute="top" secondItem="peX-bz-1o2" secondAttribute="bottom" id="YBX-Xf-6uy"/>
+                            <constraint firstItem="8i7-R3-gvi" firstAttribute="trailing" secondItem="1sX-wL-2Jg" secondAttribute="trailing" id="ecH-9C-srC"/>
                             <constraint firstItem="LFy-Mb-61K" firstAttribute="top" secondItem="6nk-wF-64U" secondAttribute="bottom" constant="8" id="hnw-OJ-UYu"/>
                             <constraint firstItem="LFy-Mb-61K" firstAttribute="leading" secondItem="tb8-7Y-jz0" secondAttribute="leading" constant="16" id="mjp-Pe-8PC"/>
+                            <constraint firstItem="8i7-R3-gvi" firstAttribute="top" secondItem="1sX-wL-2Jg" secondAttribute="bottom" constant="10" id="uju-6U-GxS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="WiK-Zi-2nt"/>
@@ -227,6 +240,7 @@
                         <outlet property="buttonFrom" destination="fEJ-2g-anP" id="yyK-SP-H8E"/>
                         <outlet property="buttonTo" destination="tOM-Vq-hkj" id="qjM-MQ-BXn"/>
                         <outlet property="inputTextView" destination="LFy-Mb-61K" id="MBo-mS-KfU"/>
+                        <outlet property="micButton" destination="1sX-wL-2Jg" id="xvA-Jb-SGb"/>
                         <outlet property="translateTextView" destination="peX-bz-1o2" id="9dv-RQ-7Rx"/>
                         <outlet property="voiceButton" destination="8i7-R3-gvi" id="Unc-98-j8e"/>
                     </connections>
@@ -253,7 +267,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pH2-aF-B0y" id="bVA-jC-zen">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -323,6 +337,7 @@
     <resources>
         <image name="closeImg" width="18" height="18"/>
         <image name="first" width="25" height="25"/>
+        <image name="micIcon" width="40" height="55"/>
         <image name="second" width="22" height="28"/>
         <image name="swapImg" width="36" height="28"/>
         <image name="voiceIcon" width="45" height="45"/>

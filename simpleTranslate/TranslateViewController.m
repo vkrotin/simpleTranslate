@@ -11,15 +11,18 @@
 #import "RequestManager.h"
 #import "NSMutableAttributedString+Translate.h"
 
-@interface TranslateViewController ()<YSKVocalizerDelegate>{
+@interface TranslateViewController ()<YSKVocalizerDelegate, YSKRecognizerDelegate>{
     NSString *_buffText;
     NSArray *_buffTrArray;
     BOOL _fromDictionaryTab;
     YSKVocalizer *_vocalizer;
+    YSKRecognition *_recognition;
+    YSKRecognizer *_recognizer;
 }
 @property (weak, nonatomic) IBOutlet UITextView *inputTextView;
 @property (weak, nonatomic) IBOutlet UITextView *translateTextView;
 @property (weak, nonatomic) IBOutlet UIButton *voiceButton;
+@property (weak, nonatomic) IBOutlet UIButton *micButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonTo;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonFrom;
 
@@ -42,6 +45,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI) name:@"updateUI" object:nil];
     
     [self.inputTextView scrollRangeToVisible:NSMakeRange(0, 1)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +79,17 @@
    
 }
 
+- (IBAction)recognizeTextButtonTouch:(UIButton *)sender{
+    sender.enabled = NO;
+    _recognizer = [[YSKRecognizer alloc] initWithLanguage:YSKRecognitionLanguageRussian model:YSKRecognitionModelGeneral];
+    _recognizer.delegate = self;
+    _recognizer.VADEnabled = YES;
+    
+    _recognition = nil;
+    
+    [_recognizer start];
+}
+
 
 - (IBAction)tapGesture:(id)sender {
     [self.view endEditing:YES];
@@ -92,7 +107,6 @@
     }];
     
 }
-
 
 - (void)setRequestWithText:(NSString *)inputText saveIt:(BOOL) saveIt {
     
@@ -138,6 +152,36 @@
     }];
 }
 
+#pragma mark - YSKRecognizerDelegate
+
+- (void)recognizerDidStartRecording:(YSKRecognizer *)recognizer{
+    // start recognize
+}
+
+- (void)recognizer:(YSKRecognizer *)recognizer didReceivePartialResults:(YSKRecognition *)results withEndOfUtterance:(BOOL)endOfUtterance{
+    _recognition = results;
+    // update translate
+    
+    _inputTextView.text = _recognition.bestResultText;
+     [self setRequestWithText:_inputTextView.text saveIt:NO];
+}
+
+- (void)recognizer:(YSKRecognizer *)recognizer didCompleteWithResults:(YSKRecognition *)results{
+    _recognition = results;
+    _recognizer = nil;
+    _micButton.enabled = YES;
+    // _complerion update translate
+    _inputTextView.text = _recognition.bestResultText;
+     [self setRequestWithText:_inputTextView.text saveIt:YES];
+}
+
+- (void)recognizer:(YSKRecognizer *)recognizer didFailWithError:(NSError *)error{
+    [self presentError:error];
+    _recognizer = nil;
+    _micButton.enabled = YES;
+    _inputTextView.text = @"";
+}
+
 #pragma mark - YSKVocalizerDelegate
 
 
@@ -147,15 +191,18 @@
 }
 
 - (void)vocalizer:(YSKVocalizer *)vocalizer didFailWithError:(NSError*)error{
-    // Show error alert if something goes wrong.
+    [self presentError:error];
+
+    _voiceButton.enabled = YES;
+}
+
+-(void) presentError:(NSError *) error{
     UIAlertController *failAlert = [UIAlertController alertControllerWithTitle:nil message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     
     [failAlert addAction:defaultAction];
     [self presentViewController:failAlert animated:YES completion:nil];
-    
-    _voiceButton.enabled = YES;
 }
 
 
@@ -176,7 +223,8 @@
     if ([[segue identifier] isEqualToString:@"toSeque"] || [[segue identifier] isEqualToString:@"fromSeque"]){
         UINavigationController *navigationController = [segue destinationViewController];
         LangTableViewController  *langController = (LangTableViewController *)navigationController.topViewController;
-        langController.isFrom = [[segue identifier] isEqualToString:@"fromSeque"];    }
+        langController.isFrom = [[segue identifier] isEqualToString:@"fromSeque"];
+    }
     
 
 }
