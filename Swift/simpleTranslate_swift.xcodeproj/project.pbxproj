@@ -18,6 +18,8 @@
 		820EC2F21ED6ABE200886A4D /* NSError+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EC2F11ED6ABE200886A4D /* NSError+extension.swift */; };
 		820EC2F41ED6BE2C00886A4D /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EC2F31ED6BE2C00886A4D /* String+extension.swift */; };
 		820EC2F81ED6F9D500886A4D /* NSAttributedString+translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EC2F71ED6F9D500886A4D /* NSAttributedString+translate.swift */; };
+		82916AF41EDD96AD003CC3D2 /* LoadingTableViewEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82916AF31EDD96AD003CC3D2 /* LoadingTableViewEmpty.swift */; };
+		82916AF71EDD9DE5003CC3D2 /* LoadingTableViewEmpty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82916AF61EDD9DE5003CC3D2 /* LoadingTableViewEmpty.xib */; };
 		82BDDAEB1ED81C7300A5A610 /* CALayer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BDDAEA1ED81C7300A5A610 /* CALayer+Additions.swift */; };
 		82BDDAED1ED8245200A5A610 /* TranslateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BDDAEC1ED8245200A5A610 /* TranslateVC.swift */; };
 		82BDDAEF1ED8246800A5A610 /* DictionaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BDDAEE1ED8246800A5A610 /* DictionaryVC.swift */; };
@@ -43,6 +45,8 @@
 		820EC2F31ED6BE2C00886A4D /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		820EC2F71ED6F9D500886A4D /* NSAttributedString+translate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+translate.swift"; sourceTree = "<group>"; };
 		82916AF11EDD5BE5003CC3D2 /* simpleTranslate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "simpleTranslate-Bridging-Header.h"; sourceTree = "<group>"; };
+		82916AF31EDD96AD003CC3D2 /* LoadingTableViewEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableViewEmpty.swift; sourceTree = "<group>"; };
+		82916AF61EDD9DE5003CC3D2 /* LoadingTableViewEmpty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingTableViewEmpty.xib; sourceTree = "<group>"; };
 		82BDDAEA1ED81C7300A5A610 /* CALayer+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Additions.swift"; sourceTree = "<group>"; };
 		82BDDAEC1ED8245200A5A610 /* TranslateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslateVC.swift; sourceTree = "<group>"; };
 		82BDDAEE1ED8246800A5A610 /* DictionaryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryVC.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		820EC2EC1ED59E4000886A4D /* Manage */ = {
 			isa = PBXGroup;
 			children = (
+				82916AF51EDD9DC8003CC3D2 /* EmptyBackgroundView */,
 				820EC2ED1ED59E5B00886A4D /* DataManager.swift */,
 				820EC2EF1ED69F1800886A4D /* RequestManager.swift */,
 				820EC2F11ED6ABE200886A4D /* NSError+extension.swift */,
@@ -131,6 +136,15 @@
 				820EC2E71ED5950900886A4D /* Constants.swift */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		82916AF51EDD9DC8003CC3D2 /* EmptyBackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				82916AF31EDD96AD003CC3D2 /* LoadingTableViewEmpty.swift */,
+				82916AF61EDD9DE5003CC3D2 /* LoadingTableViewEmpty.xib */,
+			);
+			name = EmptyBackgroundView;
 			sourceTree = "<group>";
 		};
 		E5BED49446E15B066C10A2CF /* Pods */ = {
@@ -207,6 +221,7 @@
 			files = (
 				820EC2DE1ED592AE00886A4D /* LaunchScreen.storyboard in Resources */,
 				820EC2DB1ED592AE00886A4D /* Assets.xcassets in Resources */,
+				82916AF71EDD9DE5003CC3D2 /* LoadingTableViewEmpty.xib in Resources */,
 				820EC2D91ED592AD00886A4D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +292,7 @@
 				82BDDAF31ED824B900A5A610 /* DictionaryCell.swift in Sources */,
 				820EC2E81ED5950900886A4D /* Constants.swift in Sources */,
 				82BDDAF11ED8249000A5A610 /* LanguagesVC.swift in Sources */,
+				82916AF41EDD96AD003CC3D2 /* LoadingTableViewEmpty.swift in Sources */,
 				820EC2EB1ED59DD900886A4D /* simpleTranslate_swift.xcdatamodeld in Sources */,
 				820EC2F41ED6BE2C00886A4D /* String+extension.swift in Sources */,
 				820EC2F81ED6F9D500886A4D /* NSAttributedString+translate.swift in Sources */,

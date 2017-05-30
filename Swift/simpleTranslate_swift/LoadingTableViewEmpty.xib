@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingTableViewEmpty" customModule="simpleTranslate_swift" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyImageView" destination="3zO-Gf-IwB" id="1Z8-HN-LUW"/>
+                <outlet property="emptyTextLabel" destination="QBA-Ho-Hpq" id="yCF-ES-Nr6"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Ks6-bF-SdK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В истории нет ни одного перевода" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBA-Ho-Hpq">
+                    <rect key="frame" x="87" y="312" width="200" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="KZn-Kb-GBB"/>
+                        <constraint firstAttribute="height" constant="43" id="qp6-5G-y0M"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="history" translatesAutoresizingMaskIntoConstraints="NO" id="3zO-Gf-IwB">
+                    <rect key="frame" x="172" y="273" width="31" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="QFG-26-5p8"/>
+                        <constraint firstAttribute="width" constant="31" id="odt-Vy-WIN"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QBA-Ho-Hpq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1cZ-mN-xt5"/>
+                <constraint firstItem="QBA-Ho-Hpq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NQp-rv-Z8R"/>
+                <constraint firstItem="QBA-Ho-Hpq" firstAttribute="top" secondItem="3zO-Gf-IwB" secondAttribute="bottom" constant="8" id="YBR-es-hnX"/>
+                <constraint firstItem="3zO-Gf-IwB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iI8-NG-Pg8"/>
+            </constraints>
+            <point key="canvasLocation" x="-288.5" y="-93.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="history" width="31" height="31"/>
+    </resources>
+</document>

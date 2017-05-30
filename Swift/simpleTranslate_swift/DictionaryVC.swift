@@ -11,20 +11,31 @@ import UIKit
 
 class DictionaryVC : UITableViewController{
     
-
     private let cellIdent = "dictionaryViewCell"
-    var translates:Array<STTranslate> =  Array()
+    private var translates:Array<STTranslate> =  Array()
+    private var emptyView:LoadingTableViewEmpty = LoadingTableViewEmpty()
+
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         tableView.tableFooterView = UIView()
-        
         translates = RequestManager().allTranslates as! Array<STTranslate>
         tableView.reloadData()
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        emptyView = LoadingTableViewEmpty(frame: tableView.frame)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return translates.count
+        if translates.count > 0 {
+            tableView.backgroundView = UIView()
+            return translates.count
+        }else{
+            tableView.backgroundView = emptyView
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,7 +74,7 @@ class DictionaryVC : UITableViewController{
             if let index = translates.index(of:tr) {
                 translates.remove(at: index)
             }
-            tr.mr_deleteEntity()
+            RequestManager().deleteTranslate(tr: tr)
             tableView.deleteRows(at:[indexPath], with:.automatic)
             tableView.reloadData()
         }
