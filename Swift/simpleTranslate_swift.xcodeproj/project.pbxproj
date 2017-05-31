@@ -26,6 +26,7 @@
 		82BDDAF11ED8249000A5A610 /* LanguagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BDDAF01ED8249000A5A610 /* LanguagesVC.swift */; };
 		82BDDAF31ED824B900A5A610 /* DictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BDDAF21ED824B900A5A610 /* DictionaryCell.swift */; };
 		82BDDAF51ED8495B00A5A610 /* Notification+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BDDAF41ED8495B00A5A610 /* Notification+extension.swift */; };
+		82E94AC11EDECEA2007841EB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E94AC01EDECEA2007841EB /* UIColor+Extension.swift */; };
 		CFBC2FAA293B898BB20031DB /* Pods_simpleTranslate_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F18D197DB362A737A6D7DAC /* Pods_simpleTranslate_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		82BDDAF01ED8249000A5A610 /* LanguagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguagesVC.swift; sourceTree = "<group>"; };
 		82BDDAF21ED824B900A5A610 /* DictionaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryCell.swift; sourceTree = "<group>"; };
 		82BDDAF41ED8495B00A5A610 /* Notification+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+extension.swift"; sourceTree = "<group>"; };
+		82E94AC01EDECEA2007841EB /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8F18D197DB362A737A6D7DAC /* Pods_simpleTranslate_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simpleTranslate_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F857FA7402E1DCD7923A8A8 /* Pods-simpleTranslate_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleTranslate_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleTranslate_swift/Pods-simpleTranslate_swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				820EC2F71ED6F9D500886A4D /* NSAttributedString+translate.swift */,
 				82BDDAEA1ED81C7300A5A610 /* CALayer+Additions.swift */,
 				82BDDAF41ED8495B00A5A610 /* Notification+extension.swift */,
+				82E94AC01EDECEA2007841EB /* UIColor+Extension.swift */,
 			);
 			name = Manage;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				820EC2EB1ED59DD900886A4D /* simpleTranslate_swift.xcdatamodeld in Sources */,
 				820EC2F41ED6BE2C00886A4D /* String+extension.swift in Sources */,
 				820EC2F81ED6F9D500886A4D /* NSAttributedString+translate.swift in Sources */,
+				82E94AC11EDECEA2007841EB /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

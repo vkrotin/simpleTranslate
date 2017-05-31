@@ -48,8 +48,9 @@ extension NSMutableAttributedString{
         style.lineSpacing = 8
         style.firstLineHeadIndent = 50.0
         style.headIndent = 50.0
+    
         
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-MediumItalic", size: 15.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColorRGB(rgb: 0x9a8cb5), NSParagraphStyleAttributeName:style]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-MediumItalic", size: 15.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColor(rgb: 0x9a8cb5), NSParagraphStyleAttributeName:style]
     
        return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
@@ -63,7 +64,7 @@ extension NSMutableAttributedString{
         style.headIndent = 20.0
         
         
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 15.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColorRGB(rgb: 0x8d634d), NSParagraphStyleAttributeName:style]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 15.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColor(rgb: 0x8d634d), NSParagraphStyleAttributeName:style]
         
         return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
@@ -74,7 +75,7 @@ extension NSMutableAttributedString{
         style.lineSpacing = 8
         
         
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 15.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColorRGB(rgb: 0x3c6481), NSParagraphStyleAttributeName:style]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 15.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColor(rgb: 0x3c6481), NSParagraphStyleAttributeName:style]
         
         return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
@@ -85,20 +86,20 @@ extension NSMutableAttributedString{
         style.lineSpacing = 8
         
         
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 13.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColorRGB(rgb: 0xa37d92), NSParagraphStyleAttributeName:style]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 13.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColor(rgb: 0xa37d92), NSParagraphStyleAttributeName:style]
         
         return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
     
     private func transAttrString(trans:String) -> NSAttributedString {
         let formatString = String(format: "  [%@]", trans)
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 17.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColorRGB(rgb: 0x6b6b6b)]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 17.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColor(rgb: 0x6b6b6b)]
         return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
     
     private func numberAttrString(num:String) -> NSAttributedString {
         let formatString = String(format: "\n%@  ", num)
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 17.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColorRGB(rgb: 0x9a9a9a)]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Medium", size: 17.0) ?? NSFontAttributeName, NSForegroundColorAttributeName:UIColor(rgb: 0x9a9a9a)]
         return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
     
@@ -114,7 +115,7 @@ extension NSMutableAttributedString{
         
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 8
-        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Light", size: 17.0) ?? NSFontAttributeName, NSParagraphStyleAttributeName:style, NSForegroundColorAttributeName:UIColorRGB(rgb: 0xAAAAAA)]
+        let dictionaryAttr:[String : Any] = [NSFontAttributeName:UIFont.init(name: "HelveticaNeue-Light", size: 17.0) ?? NSFontAttributeName, NSParagraphStyleAttributeName:style, NSForegroundColorAttributeName:UIColor(rgb: 0xAAAAAA)]
         return NSAttributedString(string: formatString, attributes: dictionaryAttr)
     }
     
