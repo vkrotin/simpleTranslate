@@ -100,24 +100,31 @@ class RequestManager:DataManager{
         
         let urlSt = String(keyTr: "", textTr: "", type: .TYPE_REQUEST_LANGUAGE)
         let httprequest = URLSession.shared.dataTask(with: URL(string:urlSt)!){ (data, response, error) in
-            if error != nil {
-                completion(false, NSError.init(withError: error))
-                print(error ?? "")
-            } else {
-                if let urlContent = data {
-                    do {
-                        let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options:
-                            JSONSerialization.ReadingOptions.mutableContainers)
-                        
-                        self.saveLanguage(lanDict: jsonResult as! Dictionary<String, Any>, completion: {(load, error) in
-                            completion(load, error)
-                        })
-                        
-                    } catch {
-                        print("JSON Processing Failed")
+            
+            DispatchQueue.global().async {
+                if error != nil {
+                    DispatchQueue.main.async {
+                        completion(false, NSError.init(withError: error))
+                    }
+                } else {
+                    if let urlContent = data {
+                        do {
+                            let jsonResult = try JSONSerialization.jsonObject(with: urlContent, options:
+                                JSONSerialization.ReadingOptions.mutableContainers)
+                            
+                            self.saveLanguage(lanDict: jsonResult as! Dictionary<String, Any>, completion: {(load, error) in
+                                DispatchQueue.main.async {
+                                    completion(load, error)
+                                }
+                            })
+                            
+                        } catch {
+                            print("JSON Processing Failed")
+                        }
                     }
                 }
             }
+        
         }
         httprequest.resume()
     }

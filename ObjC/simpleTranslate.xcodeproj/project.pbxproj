@@ -194,7 +194,7 @@
 					823212351E631CF90055A7D8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Z44RY25MUV;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -413,6 +413,7 @@
 			baseConfigurationReference = C5C3442225876ACAD96185FF /* Pods-simpleTranslate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z44RY25MUV;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -421,8 +422,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.vkrotin.simpleTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "85dbdb6b-f984-4efc-9da6-74958073c2ee";
-				PROVISIONING_PROFILE_SPECIFIER = "Develop: Wildcard App *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -431,7 +432,7 @@
 			baseConfigurationReference = 8FE08D640AEFC2B4A34AE214 /* Pods-simpleTranslate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z44RY25MUV;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -440,8 +441,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.vkrotin.simpleTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b6979d4d-a8d9-48f9-8289-df59bef2134d";
-				PROVISIONING_PROFILE_SPECIFIER = "AdHoc: ru.vkrotin.simpleTranslate";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

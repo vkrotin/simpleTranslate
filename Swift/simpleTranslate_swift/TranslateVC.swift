@@ -120,7 +120,7 @@ class TranslateVC: UIViewController, UITextViewDelegate, ChangeLanguageDelegate,
     @IBAction func volumeButton_touch(_ sender: Any) {
         if let button = sender as? UIButton{
             button.isEnabled = false
-            _vocalizer = YSKVocalizer(text: inputTextView.text, language: YSKVocalizerLanguageRussian, autoPlay: true, voice: YSKVocalizerVoiceZahar)
+            _vocalizer = YSKVocalizer(text: inputTextView.text, language: YSKVocalizerLanguageRussian, autoPlay: true, voice: YSKVocalizerVoiceJane)
             _vocalizer?.delegate = self
             _vocalizer?.start()
         }
