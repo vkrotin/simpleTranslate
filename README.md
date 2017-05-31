@@ -1,3 +1,5 @@
+![objC](https://img.shields.io/badge/obj--C-8.0-brightgreen.svg)
+![swift](https://img.shields.io/badge/swift-3.0-orange.svg)
 # Simple Translate
 
 This app is demonstrate simple translate around Yandex API
