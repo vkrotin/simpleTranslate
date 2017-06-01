@@ -33,6 +33,12 @@
     }];
 }
 
+-(void) deleteTranslate:(STTranslate *) tr{
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *currContext){
+        [[tr MR_inContext:currContext] MR_deleteEntityInContext:currContext];
+    }];
+}
+
 
 - (NSMutableArray *)getAllTranslates{
     return [[STTranslate MR_findAllSortedBy:@"dateAdd" ascending:NO] mutableCopy];
@@ -45,11 +51,6 @@
                                  inContext:[NSManagedObjectContext MR_newMainQueueContext]];
 }
 
-- (void)deleteTranslateObject:(STTranslate *)deleteObject {
-    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *currentContext){
-        [deleteObject MR_deleteEntityInContext:currentContext];
-    }];
-}
 
 
 -(void)saveLanguage:(NSDictionary *)langDictionary {

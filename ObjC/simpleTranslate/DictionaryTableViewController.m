@@ -9,6 +9,7 @@
 #import "DictionaryTableViewController.h"
 #import "RequestManager.h"
 #import "DictionaryTableViewCell.h"
+#import "LoadingTableViewEmpty.h"
 
 static NSString *const cellIdentifier = @"dictionaryViewCell";
 static NSNotificationName const notificationSelectTranslate = @"notificationSelectTranslate";
@@ -16,21 +17,26 @@ static NSNotificationName const notificationSelectTranslate = @"notificationSele
 
 @interface DictionaryTableViewController (){
     NSMutableArray *_translatesArray;
+    LoadingTableViewEmpty *_emptyView;
 }
 
 @end
 
 @implementation DictionaryTableViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.tableView.tableFooterView = [UIView new];
     _translatesArray = [[RequestManager sharedManager] getAllTranslates];
     [self.tableView reloadData];
 }
+
+-(void) awakeFromNib{
+    [super awakeFromNib];
+    _emptyView = [[LoadingTableViewEmpty alloc] initWithFrame:self.tableView.frame];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,7 +50,13 @@ static NSNotificationName const notificationSelectTranslate = @"notificationSele
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _translatesArray.count;
+    if (_translatesArray.count > 0) {
+        tableView.backgroundView = [UIView new];
+        return _translatesArray.count;
+    }else{
+        tableView.backgroundView = _emptyView;
+        return 0;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -77,14 +89,12 @@ static NSNotificationName const notificationSelectTranslate = @"notificationSele
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
-        
         STTranslate *tr = _translatesArray[indexPath.row];
-        
         [_translatesArray removeObject:tr];
-        [tr MR_deleteEntity];
+        [[RequestManager sharedManager] deleteTranslate:tr];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         [tableView reloadData];

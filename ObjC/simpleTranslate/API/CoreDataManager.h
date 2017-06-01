@@ -40,7 +40,7 @@ typedef void (^fromToLang)(STLang *fromLang, STLang *toLang);
 -(void)saveTranslateToDictionary:(NSDictionary *) translateObject;
 
 - (NSArray *)getTranslatesForName:(NSString *)translateName;
--(void) deleteTranslateObject:(id) deleteObject;
+-(void) deleteTranslate:(STTranslate *) tr;
 
 
 @end
