@@ -11,7 +11,6 @@
 
 
 @interface LoadingTableViewEmpty : CustomViewFromXib
-//@property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIImageView *emptyImageView;
 @property (weak, nonatomic) IBOutlet UILabel *enptyTextLabel;
 
